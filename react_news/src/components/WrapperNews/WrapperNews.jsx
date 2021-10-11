@@ -1,6 +1,6 @@
-import ItemNews from '../ItemNews'
+import ItemNews from '../ItemNews/ItemNews'
 
-function WrapperNews({ newsList }) {
+function WrapperNews({ isAuth, newsList, deleteNews }) {
 
     return(
         newsList.map((news, index) => {
@@ -11,6 +11,9 @@ function WrapperNews({ newsList }) {
                     title={ news.title }
                     content={ news.content }
                     date={ news.date }
+                    isAuth={ isAuth }
+                    id={ news.id }
+                    deleteNews={ deleteNews }
                 />)
         })
     )
